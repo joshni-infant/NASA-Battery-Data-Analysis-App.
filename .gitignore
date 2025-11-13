@@ -1,0 +1,112 @@
+# Root-level .gitignore for the NASA_BatteryDataAnalysisApp project
+
+# Python bytecode / caches
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Virtual environments (project and nested)
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+*/venv/
+*/.venv/
+
+# Distribution / packaging
+build/
+dist/
+eggs/
+*.egg-info/
+.installed.cfg
+*.egg
+pip-wheel-metadata/
+wheels/
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage
+.coverage
+.coverage.*
+htmlcov/
+.pytest_cache/
+.tox/
+.nox/
+
+# Type checker / linters
+.mypy_cache/
+.cache/
+flake8-report.txt
+
+# IDEs and editors
+.vscode/
+.idea/
+*.sublime-*
+*.code-workspace
+
+# Jupyter
+.ipynb_checkpoints
+*.ipynb
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs and runtime files
+*.log
+logs/
+*.out
+*.err
+*.pid
+
+# Secrets and environment
+.env
+.env.*
+secrets.toml
+.streamlit/secrets.toml
+credentials.json
+*.pem
+*.key
+
+# Streamlit
+.streamlit/
+
+# Data, models, large artifacts (ignore by default)
+data/
+# keep small metadata file tracked
+!data/metadata.csv
+
+models/
+checkpoints/
+*.ckpt
+*.h5
+*.pth
+*.pt
+*.pkl
+*.joblib
+
+# Machine learning / build artifacts
+*.onnx
+*.tflite
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Misc
+*.sqlite3
+*.db
+*.sqlite
+*.bak
+*.tmp
+*.swp
+
+# Allow adding project-specific overrides below
+# !path/to/file/to/keep
