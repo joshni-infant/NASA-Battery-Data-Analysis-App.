@@ -9,8 +9,6 @@ from src import tabs_content as t
 st.title("NASA Battery Data Analysis App")
 st.write("An interactive app for visualizing battery cell cycling data and analyzing degradation behavior")
 
-
-
 # Metadata Analysis 
 tab1,tab2,tab3, = st.tabs(["Summary","Exploratory Data Analysis","Capacity Computations"])
 
