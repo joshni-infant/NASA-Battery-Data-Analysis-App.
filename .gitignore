@@ -78,11 +78,6 @@ credentials.json
 # Streamlit
 .streamlit/
 
-# Data, models, large artifacts (ignore by default)
-data/
-# keep small metadata file tracked
-!data/metadata.csv
-
 models/
 checkpoints/
 *.ckpt

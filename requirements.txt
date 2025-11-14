@@ -1,0 +1,11 @@
+streamlit>=1.5.0
+pandas>=1.4.0
+numpy>=1.22.0
+matplotlib>=3.5.0
+# Optional extras you may want for interactive charts and notebooks
+plotly>=5.0.0
+jupyterlab>=3.0.0
+
+# Optional test / dev tools (uncomment if used)
+#pytest>=7.0.0
+#black>=23.0.0

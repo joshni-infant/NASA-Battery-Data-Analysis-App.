@@ -87,3 +87,46 @@ pip freeze > requirements.txt
 - Add `requirements.txt` with pinned versions.
 - Add simple unit tests for `kpi_calculations.py` and run with pytest.
 - Add a CI job to run linting/tests.
+
+-ssss
+
+## Docker / Containerization
+
+You can run this app inside a Docker container to make deployments easier and reproducible.
+
+Build and run locally with Docker:
+
+```powershell
+# build the image (tag with your repo name)
+docker build -t nasa-battery-app:latest .
+
+# run it locally and open http://localhost:8501
+docker run -p 8501:8501 nasa-battery-app:latest
+```
+
+Or use docker-compose for development (binds the project directory so live edits are reflected):
+
+```powershell
+docker-compose up --build
+```
+
+Docker tips:
+- `.dockerignore` contains common things you don't want placed in the image (venv, data, git metadata).
+- Use the `requirements.txt` — if you change dependencies, update it and rebuild the image.
+
+Deploying to a host (short guide):
+
+1. Docker Hub + a cloud runner (Render, Fly.io, AWS ECS, Azure App Service etc.)
+
+```powershell
+# tag and push to your Docker Hub repo
+docker tag nasa-battery-app:latest <your-hub-username>/nasa-battery-app:latest
+docker push <your-hub-username>/nasa-battery-app:latest
+```
+
+2. Create a new Web Service on Render or Fly.io and point it to your Docker image on DockerHub (or build from GitHub).
+
+- Render can use `Dockerfile` auto-build from the repo; set port 8501 as the instance's port.
+- Fly.io supports `fly launch` and deploys using Docker.
+
+If you want I can add a `Dockerfile.prod` tuned for production, GitHub Actions workflow to build and push images, or a quick step-by-step for Render — which do you prefer?
